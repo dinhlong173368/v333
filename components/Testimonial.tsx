@@ -1,4 +1,5 @@
 // components/Testimonial.tsx
+"use client";
 
 export default function Testimonial() {
   const testimonialData = [

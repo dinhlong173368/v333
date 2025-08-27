@@ -20,6 +20,14 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    plugins: {
+      next,
+    },
+    rules: {
+      ...next.configs["recommended"].rules,
+    },
+  },
 ];
 
 export default eslintConfig;

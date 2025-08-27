@@ -1,5 +1,6 @@
 // components/FooterSection.js
-export default function FooterSection() {
+"use client";
+ export default function FooterSection() {
   return (
     <div className="relative">
       {/* Contact Form Section */}

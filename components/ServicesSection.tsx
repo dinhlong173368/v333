@@ -1,5 +1,5 @@
 // components/ServicesSection.tsx
-import Image from "next/image";
+"use client";
 
 export default function ServicesSection() {
   const services = [

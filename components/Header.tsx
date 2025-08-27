@@ -1,9 +1,7 @@
+"use client";
+
 import { ChevronDown, X, Menu } from "lucide-react";
-import React, { useState } from "react";
-
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const navItems = [
     { name: "Home", href: "#home", active: true },
     { name: "Services", href: "#services", hasDropdown: true },
@@ -47,51 +45,7 @@ export default function Header() {
             Contact Us
           </button>
         </div>
-
-        {/* Mobile menu button */}
-        <div className="lg:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white hover:text-gray-200 transition-colors duration-300 p-2"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
-        </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="lg:hidden mt-4">
-          <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-            <div className="space-y-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={`flex items-center justify-between px-4 py-3 text-base font-medium transition-colors duration-300 rounded-lg ${
-                    item.active
-                      ? "text-tech-blue-dark bg-tech-blue/10"
-                      : "text-gray-600 hover:text-tech-blue-dark hover:bg-gray-50"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                  {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                </a>
-              ))}
-              <div className="pt-4 border-t border-gray-200">
-                <button className="w-full bg-tech-blue-dark text-white hover:bg-tech-blue px-6 py-3 rounded-lg font-semibold transition-all duration-300">
-                  Contact Us
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   );
 }
