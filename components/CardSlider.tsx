@@ -1,4 +1,3 @@
-
 "use client";
 // components/CardSlider.js
 import Slider from "react-slick";
